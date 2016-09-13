@@ -4391,7 +4391,7 @@ void run_ecdsa_openssl(void) {
 # include "modules/recovery/tests_impl.h"
 #endif
 
-int main(int argc, char **argv) {
+int mainTest(int argc, char **argv) {
     unsigned char seed16[16] = {0};
     unsigned char run32[32] = {0};
     /* find iteration count */
@@ -4523,3 +4523,9 @@ int main(int argc, char **argv) {
     printf("no problems found\n");
     return 0;
 }
+
+#ifndef IGNORE_MAIN_TEST
+int main (int argc, char **argv){
+	return mainTest(argc, argv);
+}
+#endif
