@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "include/secp256k1.h"
 
-int main g(){
-// clang -I{your path}/secp256k1 src/secp256k1.c src/isghe_main.c -lgmp
+int main (){
+// clang -I{your path}/secp256k1 src/secp256k1.c src/hello_secp256k1.c -lgmp -DVERIFY -DHAVE_CONFIG_H
 // clang -I{your path}/secp256k1 src/tests.c -lgmp -DVERIFY -DHAVE_CONFIG_H -v
 	printf ("Hello secp256k1!\n");
 
@@ -12,6 +12,6 @@ int main g(){
 		secp256k1_context_destroy (aContext);
 		aContext = NULL;
 	}
-	
+
 	printf ("bye bye…\n");
 }
